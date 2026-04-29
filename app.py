@@ -7,7 +7,7 @@ st.title("📘 Student Performance Dashboard")
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("data/students.csv")
+    return pd.read_csv("students.csv")
 
 df = load_data()
 
@@ -27,5 +27,5 @@ st.plotly_chart(fig1, use_container_width=True)
 fig2 = px.box(filtered, x="Subject", y="Marks", color="Subject", title="Subject Performance")
 st.plotly_chart(fig2, use_container_width=True)
 
-st.subheader("Student Data")
+st.subheader("Student data")
 st.dataframe(filtered)
